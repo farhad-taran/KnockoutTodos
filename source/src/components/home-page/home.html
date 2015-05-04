@@ -1,0 +1,11 @@
+<h2>Tasks</h2>
+
+<input type="text" data-bind="value:taskName, valueUpdate: 'input', executeOnEnter: addTask"></input>
+<ul data-bind="foreach: vm.tasks">
+    <li>
+        <span data-bind="text: $index"> </span>:
+        <span data-bind="text: $data.taskName"> </span>
+        <a href="#" data-bind="click: $parent.removeTask">Remove</a>
+    </li>
+</ul>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KnockoutSpa</title>
+    <!-- build:css -->
+      <link href="bower_modules/components-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    
+    <script type="text/javascript">
+      
+      // Since the components aren't registered until the AMD module
+      // loads, which is asynchronous, the following prevents IE6-8's
+      // parser from discarding the custom element
+      document.createElement('about');
+      document.createElement('nav-bar');
+      document.createElement('home');
+      document.createElement('contact-page');
+      document.createElement('programme-grid');
+
+
+      </script>
+
+
+
+    <!-- build:js -->
+      <script src="app/require.config.js"></script>
+      <script data-main="app/startup" src="bower_modules/requirejs/require.js"></script>
+    <!-- endbuild -->
+
+    <nav-bar params="route: route"></nav-bar>
+    <div id="page" class="container" data-bind="component: { name: route().page, params: route }"></div>
+  </body>
+</html>
