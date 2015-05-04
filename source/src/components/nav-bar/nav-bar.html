@@ -19,14 +19,14 @@
       <ul class="nav navbar-nav">
         <li data-bind="css: { active: route().page === 'home-page' }">
           <a href="#">Tasks</a>
+        </li>        
+
+        <li data-bind="css: { active: route().page === 'completed-page' }">
+          <a href="#completed">Completed</a>
         </li>
 
         <li data-bind="css: { active: route().page === 'about-page' }">
           <a href="#logs">Logs</a>
-        </li>
-
-        <li data-bind="css: { active: route().page === 'contact-page' }">
-          <a href="#contact">Contact</a>
         </li>
 
       </ul>

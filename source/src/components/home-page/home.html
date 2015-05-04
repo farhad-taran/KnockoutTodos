@@ -3,9 +3,9 @@
 <input type="text" data-bind="value:taskName, valueUpdate: 'input', executeOnEnter: addTask"></input>
 <ul data-bind="foreach: vm.tasks">
     <li>
-        <span data-bind="text: $index"> </span>:
+    	<input type="checkbox"  data-bind="checked:$data.done">
         <span data-bind="text: $data.taskName"> </span>
-        <a href="#" data-bind="click: $parent.removeTask">Remove</a>
+        <a href="#" data-bind="click: $parent.removeTask">Remove</a><br>        
     </li>
 </ul>
 

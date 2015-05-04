@@ -4,7 +4,7 @@ define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], 
   ko.components.register('nav-bar', { require: 'components/nav-bar/nav-bar' });
   ko.components.register('home-page', { require: 'components/home-page/home' });
   ko.components.register('logs-page', { require: 'components/logs-page/logs-page' });
-  ko.components.register('contact-page', { require: 'components/contact-page/contact-page' });
+  ko.components.register('completed-page', { require: 'components/completed-page/completed-page' });
 
 
   // ... or for template-only components, you can just point to a .html file directly:

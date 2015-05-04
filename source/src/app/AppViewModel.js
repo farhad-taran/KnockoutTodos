@@ -11,7 +11,7 @@ define("AppViewModel",["knockout"], function(ko) {
     };
 
     addTask = function(taskName) {
-      tasks.push({taskName:taskName})
+      tasks.push(ko.observable({taskName:taskName, done: false}));
       log('Added new task: '+ taskName);
     };
 
