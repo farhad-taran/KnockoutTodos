@@ -1,12 +1,13 @@
 define(["AppViewModel","knockout", "text!./home.html"], function(AppViewModel,ko, homeTemplate) {
 
 	ko.bindingHandlers.executeOnEnter = {
-	    init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+	    init: function (element, valueAccessor, allBindingsAccessor, viewModel) {	    	
 	        var allBindings = allBindingsAccessor();
 	        $(element).keypress(function (event) {
 	            var keyCode = (event.which ? event.which : event.keyCode);
 	            if (keyCode === 13) {
 	                allBindings.executeOnEnter.call(viewModel);
+	                event.target.value = '';
 	                return false;
 	            }
 	            return true;
@@ -22,7 +23,7 @@ define(["AppViewModel","knockout", "text!./home.html"], function(AppViewModel,ko
   }
 
   HomeViewModel.prototype.removeTask = function() {
-    this.vm.removeTask(this);
+    AppViewModel.removeTask(this);
   };
 
   HomeViewModel.prototype.addTask = function(val,ev) {

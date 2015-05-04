@@ -5,14 +5,14 @@ define("AppViewModel",["knockout"], function(ko) {
     var tasks = ko.observableArray();
     var taskName = ko.observable("");
 
-    removeTask = function() {
-      this.tasks.remove(this);
-      this.log('You invoked doSomething() on the viewmodel.');
+    removeTask = function(task) {
+      tasks.remove(task);
+      log('Removed task: '+ this);
     };
 
     addTask = function(taskName) {
       tasks.push({taskName:taskName})
-      log('You invoked doSomething() on the viewmodel.');
+      log('Added new task: '+ taskName);
     };
 
     log = function(message) {
